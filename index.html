@@ -1,230 +1,306 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Neomynd | Agentes IA para Hostelería</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Favicon -->
-<link rel="icon" href="favicon.ico">
+  <!-- SEO -->
+  <title>Agentes IA para Hoteles & Restaurantes | Neomynd</title>
+  <meta name="description" content="Agentes IA para hoteles y restaurantes: atención 24/7, automatización de reservas, pedidos y consultas, y seguimiento inteligente de clientes.">
+  <meta name="keywords" content="agente IA hoteles, restaurante, automatización reservas, pedidos, atención al cliente">
 
-<style>
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico">
 
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #020617;
-  color: #e5f2ff;
-  padding-top: 80px;
-}
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-/* HEADER */
-.header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 70px;
-  background: #010619;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 15px rgba(0,229,255,.2);
-  z-index: 1000;
-}
+    body {
+      font-family: system-ui, sans-serif;
+      background: #020617;
+      color: #e5f2ff;
+      line-height: 1.6;
+      padding-top: 80px;
+    }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 600;
-  white-space: nowrap;
-}
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 70px;
+      background: #010619;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(0,229,255,.25);
+      z-index: 1000;
+    }
 
-.logo img {
-  height: 38px;
-}
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
 
-/* HERO */
-.hero {
-  text-align: center;
-  padding: 80px 20px;
-}
+    .logo img {
+      height: 38px;
+    }
 
-.hero h1 {
-  font-size: 2.2rem;
-  margin-bottom: 12px;
-}
+    /* SECTIONS */
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
 
-.hero span {
-  color: #00e5ff;
-}
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 15px;
+    }
 
-.hero p {
-  color: #cbd5f5;
-  margin-bottom: 30px;
-}
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
 
-/* BOTÓN */
-.btn {
-  display: inline-block;
-  padding: 14px 28px;
-  background: #00e5ff;
-  color: #020617;
-  font-weight: 600;
-  border-radius: 999px;
-  text-decoration: none;
-  box-shadow: 0 0 20px rgba(0,229,255,0.5);
-  transition: transform .2s ease, box-shadow .2s ease;
-  margin-top: 25px;
+    .neon {
+      color: #00e5ff;
+    }
 
-}
+    .lead {
+      max-width: 750px;
+      margin: 0 auto 35px;
+      color: #cbd5f5;
+    }
 
-.btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 30px rgba(0,229,255,0.8);
-}
+    /* BUTTON */
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: #00e5ff;
+      color: #020617;
+      font-weight: 700;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 0 25px rgba(0,229,255,.6);
+      transition: transform .2s ease;
+    }
 
-/* FEATURES */
-.features {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0 20px;
-  text-align: center;
-}
+    .btn:hover {
+      transform: translateY(-2px);
+    }
 
-.features h2 {
-  margin-bottom: 30px;
-}
+    /* GRID GENERIC */
+    .grid {
+      max-width: 600px;
+      margin: 0 auto;
+      display: grid;
+      gap: 25px;
+    }
 
-.card {
-  border: 2px solid #00e5ff;
-  border-radius: 12px;
-  padding: 25px;
-  margin-bottom: 25px;
-  background: rgba(0,229,255,0.05);
-  box-shadow: 0 0 20px rgba(0,229,255,0.2);
-}
+    /* GRID 4 EN UNA LINEA */
+    .grid-4 {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
 
-.card h3 {
-  color: #00e5ff;
-  margin-bottom: 15px;
-}
+    @media (max-width: 1024px) {
+      .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
 
-.card ul {
-  list-style: none;
-}
+    @media (max-width: 600px) {
+      .grid-4 {
+        grid-template-columns: 1fr;
+      }
+    }
 
-.card li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin: 6px 0;
-}
+    /* CARDS */
+    .card {
+      border: 2px solid #00e5ff;
+      border-radius: 14px;
+      padding: 30px 20px;
+      background: rgba(0,229,255,.05);
+      height: 100%;
+      text-align: center;
+    }
 
-.card li::before {
-  content: "✓";
-  color: #22c55e;
-  font-weight: bold;
-}
+    .card h3 {
+      color: #00e5ff;
+      margin-bottom: 15px;
+    }
 
-/* CTA */
-.cta {
-  text-align: center;
-  margin: 80px 20px;
-}
+    .card p {
+      color: #cbd5f5;
+    }
 
-.neon-line {
-  border: none;
-  height: 3px;
-  background: #00e5ff;
-  box-shadow: 0 0 10px #00e5ff, 0 0 20px #00e5ff;
-  margin: 40px 0;
-}
+    .card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 30px;
-  color: #9ccfff;
-}
+    .card li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 8px 0;
+      flex-wrap: wrap;
+      text-align: center;
+    }
 
-footer .brand {
-  font-weight: 700;
-  color: #00e5ff;
-}
-</style>
+    .card li::before {
+      content: "✓";
+      color: #22c55e;
+      font-weight: 700;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    /* NEON LINE */
+    hr.neon {
+      border: none;
+      height: 3px;
+      background: #00e5ff;
+      box-shadow: 0 0 10px #00e5ff;
+      margin: 60px 0;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 40px 20px;
+      text-align: center;
+      color: #9ccfff;
+    }
+
+    footer .brand {
+      color: #00e5ff;
+      font-weight: 700;
+    }
+  </style>
 </head>
 
 <body>
 
-<header class="header">
+<!-- HEADER -->
+<header>
   <div class="logo">
-    <img src="https://raw.githubusercontent.com/CaroMSerrano/neomyndlanding/main/Images/Isotipo_NeoMynd.png" alt="Neomynd">
-    NeoMynd – Future Intelligence, Today
+    <a href="/" style="display:flex; align-items:center; gap:10px; color:inherit; text-decoration:none;">
+      <img src="https://raw.githubusercontent.com/CaroMSerrano/neomyndlanding/main/Images/Isotipo_NeoMynd.png" alt="Neomynd logo">
+      NeoMynd – Future Intelligence, Today
+    </a>
   </div>
 </header>
 
-<section class="hero">
-  <h1>Agentes IA para <span>Hoteles y Restaurantes</span></h1>
-  <p>Más reservas. Mejor atención. Menos carga operativa para tu equipo.</p>
+<!-- HERO -->
+<section>
+  <h1>Agentes IA para <span class="neon">Hoteles & Restaurantes</span></h1>
+  <p class="lead">
+    Gestiona reservas, pedidos y consultas 24/7 sin sobrecargar al equipo de atención al cliente.
+  </p>
 
-  <a class="btn" target="_blank" href="https://api.leadconnectorhq.com/widget/booking/SMCCcUsn6LWhstOfftAD">
-    Reservar mi diagnóstico
+  <a class="btn" target="_blank"
+     href="https://api.leadconnectorhq.com/widget/booking/SMCCcUsn6LWhstOfftAD">
+    Agendar diagnóstico gratuito
   </a>
 </section>
 
-<hr class="neon-line">
+<hr class="neon">
 
-<section class="features">
-  <h2>¿Qué hace nuestro Agente?</h2>
+<!-- PROBLEMAS -->
+<section>
+  <h2>Problemas comunes en hoteles y restaurantes</h2>
 
-  <div class="card">
-    <h3>🏨 Para Hoteles</h3>
-    <ul>
-      <li>Gestión automática de consultas</li>
-      <li>Información de habitaciones y servicios</li>
-      <li>Soporte para reservas 24/7</li>
-      <li>Derivación a recepción cuando es necesario</li>
-    </ul>
-  </div>
+  <div class="grid-4">
+    <div class="card">
+      <h3>❌ Reservas perdidas o duplicadas</h3>
+      <p>Sin seguimiento automatizado, los clientes reciben confirmaciones tardías o errores.</p>
+    </div>
 
-  <div class="card">
-    <h3>🍽️ Para Restaurantes</h3>
-    <ul>
-      <li>Gestión de reservas</li>
-      <li>Información de horarios y ubicación</li>
-      <li>Consulta de carta en tiempo real</li>
-      <li>Información de alérgenos y dietas especiales</li>
-    </ul>
-  </div>
+    <div class="card">
+      <h3>❌ Consultas sin respuesta</h3>
+      <p>Preguntas de clientes que llegan fuera del horario de atención y no son atendidas.</p>
+    </div>
 
-  <div class="card">
-    <h3>⚙️ Funciones Avanzadas</h3>
-    <ul>
-      <li>Atención por Web, WhatsApp y Email</li>
-      <li>Integración con sistemas de reservas</li>
-      <li>Escalado inteligente a personal humano</li>
-    </ul>
+    <div class="card">
+      <h3>❌ Pedidos y room service lentos</h3>
+      <p>El equipo no logra gestionar correctamente los pedidos y solicitudes en tiempo real.</p>
+    </div>
+
+    <div class="card">
+      <h3>❌ Equipo saturado</h3>
+      <p>El personal se ve sobrecargado con tareas repetitivas y pierde foco en la experiencia del cliente.</p>
+    </div>
   </div>
 </section>
 
-<section id="cta" class="cta">
+<!-- SOLUCIÓN -->
+<section>
+  <h2>¿Qué hace el Agente IA?</h2>
+
+  <div class="grid" style="grid-template-columns: 1fr; max-width: 600px; margin: 0 auto; gap: 25px;">
+    <div class="card">
+      <h3>🤖 Atención 24/7</h3>
+      <ul>
+        <li>Respuestas instantáneas en web y WhatsApp</li>
+        <li>Gestión de reservas y pedidos</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>📅 Automatización de reservas</h3>
+      <ul>
+        <li>Confirmaciones y recordatorios automáticos</li>
+        <li>Evita reservas duplicadas</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>🔗 Integración a sistemas internos</h3>
+      <ul>
+        <li>Sincronización con PMS, ERP y CRM</li>
+        <li>Flujos automáticos de inventario y habitaciones</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>💡 Optimiza el equipo de atención</h3>
+      <ul>
+        <li>Libera al personal de tareas repetitivas</li>
+        <li>Permite enfocarse en la experiencia del cliente</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="cta">
   <h2>Agenda un Diagnóstico Gratuito</h2>
-  <p>En 30 minutos analizamos cómo aumentar reservas y mejorar la experiencia del cliente.</p>
-<p></p>
-  <a class="btn" target="_blank" href="https://api.leadconnectorhq.com/widget/booking/SMCCcUsn6LWhstOfftAD">
+  <p class="lead">
+    En 30 minutos analizamos cómo mejorar reservas, pedidos y atención al cliente sin sumar personal.
+  </p>
+
+  <a class="btn" target="_blank"
+     href="https://api.leadconnectorhq.com/widget/booking/SMCCcUsn6LWhstOfftAD">
     Reservar mi diagnóstico
   </a>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <hr class="neon-line">
+  <hr class="neon">
   <p><span class="brand">Neomynd</span> – Future Intelligence, Today</p>
 </footer>
 
